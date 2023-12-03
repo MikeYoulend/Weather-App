@@ -35,5 +35,22 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+			const apiKey = "b087b4f846cc13b3b3bf05cf1e4d8140";
+			const apiUrl =
+				"https://api.openweathermap.org/data/2.5/weather?units=metric&q=saluggia";
+
+			async function checkWeather() {
+				const response = await fetch(apiUrl + `&appid=${apiKey}`);
+				let data = await response.json();
+
+				console.log(data);
+			}
+
+			checkWeather();
+
+			document.querySelector(".city").innerHTML = data.name;
+		</script>
 	</body>
 </html>
